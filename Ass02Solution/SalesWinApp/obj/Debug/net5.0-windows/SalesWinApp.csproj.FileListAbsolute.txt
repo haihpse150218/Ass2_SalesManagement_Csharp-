@@ -1,5 +1,4 @@
 F:\FPT-ky 5\PRN211\workspace\Lap-2_Group\Ass02Solution\SalesWinApp\bin\Debug\net5.0-windows\SalesWinApp.exe
-F:\FPT-ky 5\PRN211\workspace\Lap-2_Group\Ass02Solution\SalesWinApp\bin\Debug\net5.0-windows\appsettings.json
 F:\FPT-ky 5\PRN211\workspace\Lap-2_Group\Ass02Solution\SalesWinApp\bin\Debug\net5.0-windows\SalesWinApp.deps.json
 F:\FPT-ky 5\PRN211\workspace\Lap-2_Group\Ass02Solution\SalesWinApp\bin\Debug\net5.0-windows\SalesWinApp.runtimeconfig.json
 F:\FPT-ky 5\PRN211\workspace\Lap-2_Group\Ass02Solution\SalesWinApp\bin\Debug\net5.0-windows\SalesWinApp.runtimeconfig.dev.json
@@ -67,3 +66,7 @@ F:\FPT-ky 5\PRN211\workspace\Lap-2_Group\Ass02Solution\SalesWinApp\obj\Debug\net
 F:\FPT-ky 5\PRN211\workspace\Lap-2_Group\Ass02Solution\SalesWinApp\obj\Debug\net5.0-windows\SalesWinApp.pdb
 F:\FPT-ky 5\PRN211\workspace\Lap-2_Group\Ass02Solution\SalesWinApp\obj\Debug\net5.0-windows\SalesWinApp.genruntimeconfig.cache
 F:\FPT-ky 5\PRN211\workspace\Lap-2_Group\Ass02Solution\SalesWinApp\obj\Debug\net5.0-windows\ref\SalesWinApp.dll
+F:\FPT-ky 5\PRN211\workspace\Lap-2_Group\Ass02Solution\SalesWinApp\obj\Debug\net5.0-windows\SalesWinApp.frmAddMember.resources
+F:\FPT-ky 5\PRN211\workspace\Lap-2_Group\Ass02Solution\SalesWinApp\obj\Debug\net5.0-windows\SalesWinApp.frmEditMember.resources
+F:\FPT-ky 5\PRN211\workspace\Lap-2_Group\Ass02Solution\SalesWinApp\obj\Debug\net5.0-windows\SalesWinApp.frmAddProduct.resources
+F:\FPT-ky 5\PRN211\workspace\Lap-2_Group\Ass02Solution\SalesWinApp\obj\Debug\net5.0-windows\SalesWinApp.frmEditProduct.resources
