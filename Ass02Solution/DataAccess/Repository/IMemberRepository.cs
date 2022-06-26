@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BusinessObject;
 
 namespace DataAccess.Repository
 {
-    internal interface IMemberRepository
+    public interface IMemberRepository
     {
+        public MemberObject Login(string email, string password, out string msg);
+        public bool ValidateEmail(string email);
     }
 }

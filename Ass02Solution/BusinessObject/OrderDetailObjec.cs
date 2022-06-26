@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessObject
 {
-    internal class OrderDetailObjec
+    public class OrderDetailObjec
     {
         public int OrderId { get; set; }
         public int MemberId { get; set; }
