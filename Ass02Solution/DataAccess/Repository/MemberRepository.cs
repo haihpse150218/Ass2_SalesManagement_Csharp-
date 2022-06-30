@@ -11,7 +11,6 @@ namespace DataAccess.Repository
 
     public class MemberRepository : IMemberRepository
     {
-        
         private static readonly object instanceLock = new object();
         public static MemberRepository instance = null;
         private MemberRepository() { }
@@ -50,11 +49,9 @@ namespace DataAccess.Repository
             var config = new MapperConfiguration(cfg =>
 
                  cfg.CreateMap<Member, MemberObject>()
-
             );
-            
-            
-            MemberObject memberObject = new MemberObject();
+            MemberObject memberObject = null;
+
             Dictionary<string,string> defaultAdmin = GetDefaultAdmin();
             string emailAdmin = "";
             string passwordAdmin = "";
@@ -69,11 +66,19 @@ namespace DataAccess.Repository
                     
                     flag = true;
                     msg = null;
+
+                    memberObject = new MemberObject();
+
                     memberObject.Email = email;
                     memberObject.Password = password;
                     memberObject.Role = 0;
                 }
-                msg = "Password Wrong!!!";
+
+                else
+                {
+                    msg = "Password Wrong!!!";
+                }
+                
             }
             else
             {
@@ -83,8 +88,11 @@ namespace DataAccess.Repository
                  if (email == mem.Email)
                     {
                         
-                        if (password == mem.Password) ;
+
+                        if (password == mem.Password)
                         {
+                            memberObject = new MemberObject();
+
                             flag = true;
                             msg = null;
                             //Using AutoMapper
@@ -92,15 +100,38 @@ namespace DataAccess.Repository
                             //map data from mem to memberObject
                             memberObject = mapper.Map<MemberObject>(mem);
                             memberObject.Role = 1;
-                            break;
+
                         }
-                        msg = "Password Wrong!!!";
+                        else
+                        {
+                            msg = "Password Wrong!!!";
+                        }
+
                     }
 
                 }
             }
-            
+
             return memberObject;
         }
+        public bool IsValidEmail(string email)
+        {
+            var trimmedEmail = email.Trim();
+
+            if (trimmedEmail.EndsWith("."))
+            {
+                return false; // suggested by @TK-421
+            }
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == trimmedEmail;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }
