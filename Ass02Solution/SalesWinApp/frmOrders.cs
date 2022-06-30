@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessObject;
+using DataAccess.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,12 +47,19 @@ namespace SalesWinApp
 
         private void btLoadOrder_Click(object sender, EventArgs e)
         {
-
+            DateTime fromDate,toDate;
+            fromDate = dtFromDateOrder.Value;
+            toDate = dtToDateOrder.Value;
+            List<OrderObject> listOrder = 
+                OrderRepository.Instance.GetListOrderByRangeDate(fromDate, toDate, frmLogin.User);
+            BindingList<OrderObject> bindingList = new BindingList<OrderObject>(listOrder);
+            dgvOrder.DataSource = bindingList;
         }
 
         private void btnLoadAllOrder_Click(object sender, EventArgs e)
         {
 
         }
+        
     }
 }
