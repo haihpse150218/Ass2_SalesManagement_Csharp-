@@ -16,5 +16,41 @@ namespace SalesWinApp
         {
             InitializeComponent();
         }
+
+        private void btnViewDetails_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCreateOrder_Click(object sender, EventArgs e)
+        {
+            frmAddProductOrderDetails frmAddProductOrderDetails = new frmAddProductOrderDetails();
+            frmAddProductOrderDetails.ShowDialog();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            this.tabOrders.SelectedIndex = 1;
+        }
+
+        private void btnSortSalesDescending_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCreateReport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btLoadOrder_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLoadAllOrder_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
