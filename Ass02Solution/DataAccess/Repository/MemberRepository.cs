@@ -11,7 +11,6 @@ namespace DataAccess.Repository
 
     public class MemberRepository : IMemberRepository
     {
-        
         private static readonly object instanceLock = new object();
         public static MemberRepository instance = null;
         private MemberRepository() { }
@@ -104,10 +103,23 @@ namespace DataAccess.Repository
             }
             return memberObject;
         }
-
-        public bool ValidateEmail(string email)
+        public bool IsValidEmail(string email)
         {
-            throw new System.NotImplementedException();
+            var trimmedEmail = email.Trim();
+
+            if (trimmedEmail.EndsWith("."))
+            {
+                return false; // suggested by @TK-421
+            }
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == trimmedEmail;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }
