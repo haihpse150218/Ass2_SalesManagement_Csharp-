@@ -42,19 +42,14 @@ namespace DataAccess.Repository
             defaultAdmin.Add("password", password);
             return defaultAdmin;
         }
-
         FStore2Context db = new FStore2Context();
         public MemberObject Login(string email, string password, out string msg)
         {
             //initializing the mapper
             var config = new MapperConfiguration(cfg =>
-
                  cfg.CreateMap<Member, MemberObject>()
-
             );
-            
-            
-            MemberObject memberObject = new MemberObject();
+            MemberObject memberObject = null;
             Dictionary<string,string> defaultAdmin = GetDefaultAdmin();
             string emailAdmin = "";
             string passwordAdmin = "";
@@ -69,11 +64,16 @@ namespace DataAccess.Repository
                     
                     flag = true;
                     msg = null;
+                    memberObject = new MemberObject();
                     memberObject.Email = email;
                     memberObject.Password = password;
                     memberObject.Role = 0;
                 }
-                msg = "Password Wrong!!!";
+                else
+                {
+                    msg = "Password Wrong!!!";
+                }
+                
             }
             else
             {
@@ -83,8 +83,9 @@ namespace DataAccess.Repository
                  if (email == mem.Email)
                     {
                         
-                        if (password == mem.Password) ;
+                        if (password == mem.Password)
                         {
+                            memberObject = new MemberObject();
                             flag = true;
                             msg = null;
                             //Using AutoMapper
@@ -92,15 +93,21 @@ namespace DataAccess.Repository
                             //map data from mem to memberObject
                             memberObject = mapper.Map<MemberObject>(mem);
                             memberObject.Role = 1;
-                            break;
                         }
-                        msg = "Password Wrong!!!";
+                        else
+                        {
+                            msg = "Password Wrong!!!";
+                        }
                     }
 
                 }
             }
-            
             return memberObject;
+        }
+
+        public bool ValidateEmail(string email)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

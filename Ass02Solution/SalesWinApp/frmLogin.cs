@@ -1,4 +1,5 @@
-﻿using DataAccess.Repository;
+﻿using BusinessObject;
+using DataAccess.Repository;
 using System;
 using System.Windows.Forms;
 
@@ -6,8 +7,10 @@ namespace SalesWinApp
 {
     public partial class frmLogin : Form
     {
+        public static MemberObject User { get; set; }
         public frmLogin()
         {
+            User = null;
             InitializeComponent();
         }
 
@@ -15,7 +18,8 @@ namespace SalesWinApp
         {
             string email = txtEmail.Text.Trim();
             string password = txtPassword.Text;
-            if (Login(email, password))
+            User = Login(email, password);
+            if (User != null)
             {
                 frmMain frmMain = new frmMain(); ;
                 this.Hide();
@@ -23,7 +27,7 @@ namespace SalesWinApp
                 this.Show();
             }
         }
-        bool Login(string email, string password)
+        MemberObject Login(string email, string password)
         {
             if (email == null)
             {
@@ -33,14 +37,14 @@ namespace SalesWinApp
             {
                 password = "";
             }
-            bool flag = false;
+            MemberObject user = null;
             string msg = null;
-            flag = MemberRepository.Instance.Login(email, password, out msg);
+            user = MemberRepository.Instance.Login(email, password, out msg);
             if (msg != null)
             {
                 MessageBox.Show(msg);
             }
-            return flag;
+            return user;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
