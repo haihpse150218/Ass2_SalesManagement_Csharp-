@@ -1,5 +1,7 @@
+
 ﻿using BusinessObject;
 using DataAccess.Repository;
+
 using System;
 using System.Windows.Forms;
 
@@ -18,8 +20,10 @@ namespace SalesWinApp
         {
             string email = txtEmail.Text.Trim();
             string password = txtPassword.Text;
+
             User = Login(email, password);
             if (User != null)
+
             {
                 frmMain frmMain = new frmMain(); ;
                 this.Hide();
@@ -27,7 +31,9 @@ namespace SalesWinApp
                 this.Show();
             }
         }
+
         MemberObject Login(string email, string password)
+
         {
             if (email == null)
             {
@@ -37,14 +43,18 @@ namespace SalesWinApp
             {
                 password = "";
             }
+
             MemberObject user = null;
             string msg = null;
             user = MemberRepository.Instance.Login(email, password, out msg);
+
             if (msg != null)
             {
                 MessageBox.Show(msg);
             }
+
             return user;
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
