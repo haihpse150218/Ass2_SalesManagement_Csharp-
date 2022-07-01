@@ -38,13 +38,6 @@
             this.btnViewDetails = new System.Windows.Forms.Button();
             this.btnLoadAllOrder = new System.Windows.Forms.Button();
             this.dgvOrder = new System.Windows.Forms.DataGridView();
-            this.orderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.memberIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.requiredDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shippedDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.freightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderObjectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dtToDateOrder = new System.Windows.Forms.DateTimePicker();
             this.lbToDate = new System.Windows.Forms.Label();
@@ -52,11 +45,11 @@
             this.lbFromDate = new System.Windows.Forms.Label();
             this.btLoadOrder = new System.Windows.Forms.Button();
             this.OrderDetails = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.txtFeightDetails = new System.Windows.Forms.TextBox();
             this.dtOrderDateDetails = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.txtMemberNameDetails = new System.Windows.Forms.TextBox();
+            this.dtShippedDate = new System.Windows.Forms.DateTimePicker();
+            this.dtRequiredDate = new System.Windows.Forms.DateTimePicker();
             this.txtMemberIdDetails = new System.Windows.Forms.TextBox();
             this.txtOderIdDetails = new System.Windows.Forms.TextBox();
             this.btnAddOrderDetails = new System.Windows.Forms.Button();
@@ -64,7 +57,6 @@
             this.dgvOrderDetails = new System.Windows.Forms.DataGridView();
             this.lbFreight = new System.Windows.Forms.Label();
             this.lbShippedDate = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.lbRequiredDate = new System.Windows.Forms.Label();
             this.lbOrderDate = new System.Windows.Forms.Label();
             this.lbCustomerId = new System.Windows.Forms.Label();
@@ -114,7 +106,7 @@
             // 
             // btnCreateOrder
             // 
-            this.btnCreateOrder.Location = new System.Drawing.Point(671, 115);
+            this.btnCreateOrder.Location = new System.Drawing.Point(671, 114);
             this.btnCreateOrder.Name = "btnCreateOrder";
             this.btnCreateOrder.Size = new System.Drawing.Size(83, 43);
             this.btnCreateOrder.TabIndex = 12;
@@ -124,7 +116,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(671, 179);
+            this.btnEdit.Location = new System.Drawing.Point(671, 173);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(83, 43);
             this.btnEdit.TabIndex = 11;
@@ -134,7 +126,7 @@
             // 
             // btnSortSalesDescending
             // 
-            this.btnSortSalesDescending.Location = new System.Drawing.Point(671, 243);
+            this.btnSortSalesDescending.Location = new System.Drawing.Point(671, 241);
             this.btnSortSalesDescending.Name = "btnSortSalesDescending";
             this.btnSortSalesDescending.Size = new System.Drawing.Size(83, 43);
             this.btnSortSalesDescending.TabIndex = 10;
@@ -154,7 +146,7 @@
             // 
             // btnViewDetails
             // 
-            this.btnViewDetails.Location = new System.Drawing.Point(673, 51);
+            this.btnViewDetails.Location = new System.Drawing.Point(671, 51);
             this.btnViewDetails.Name = "btnViewDetails";
             this.btnViewDetails.Size = new System.Drawing.Size(83, 43);
             this.btnViewDetails.TabIndex = 8;
@@ -174,66 +166,14 @@
             // 
             // dgvOrder
             // 
-            this.dgvOrder.AutoGenerateColumns = false;
             this.dgvOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.orderIdDataGridViewTextBoxColumn,
-            this.memberIdDataGridViewTextBoxColumn,
-            this.orderDateDataGridViewTextBoxColumn,
-            this.requiredDateDataGridViewTextBoxColumn,
-            this.shippedDateDataGridViewTextBoxColumn,
-            this.freightDataGridViewTextBoxColumn,
-            this.totalDataGridViewTextBoxColumn});
-            this.dgvOrder.DataSource = this.orderObjectBindingSource;
             this.dgvOrder.Location = new System.Drawing.Point(8, 51);
             this.dgvOrder.Name = "dgvOrder";
             this.dgvOrder.RowTemplate.Height = 25;
             this.dgvOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOrder.Size = new System.Drawing.Size(659, 301);
             this.dgvOrder.TabIndex = 5;
-            // 
-            // orderIdDataGridViewTextBoxColumn
-            // 
-            this.orderIdDataGridViewTextBoxColumn.DataPropertyName = "OrderId";
-            this.orderIdDataGridViewTextBoxColumn.HeaderText = "OrderId";
-            this.orderIdDataGridViewTextBoxColumn.Name = "orderIdDataGridViewTextBoxColumn";
-            // 
-            // memberIdDataGridViewTextBoxColumn
-            // 
-            this.memberIdDataGridViewTextBoxColumn.DataPropertyName = "MemberId";
-            this.memberIdDataGridViewTextBoxColumn.HeaderText = "MemberId";
-            this.memberIdDataGridViewTextBoxColumn.Name = "memberIdDataGridViewTextBoxColumn";
-            // 
-            // orderDateDataGridViewTextBoxColumn
-            // 
-            this.orderDateDataGridViewTextBoxColumn.DataPropertyName = "OrderDate";
-            this.orderDateDataGridViewTextBoxColumn.HeaderText = "OrderDate";
-            this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
-            // 
-            // requiredDateDataGridViewTextBoxColumn
-            // 
-            this.requiredDateDataGridViewTextBoxColumn.DataPropertyName = "RequiredDate";
-            this.requiredDateDataGridViewTextBoxColumn.HeaderText = "RequiredDate";
-            this.requiredDateDataGridViewTextBoxColumn.Name = "requiredDateDataGridViewTextBoxColumn";
-            // 
-            // shippedDateDataGridViewTextBoxColumn
-            // 
-            this.shippedDateDataGridViewTextBoxColumn.DataPropertyName = "ShippedDate";
-            this.shippedDateDataGridViewTextBoxColumn.HeaderText = "ShippedDate";
-            this.shippedDateDataGridViewTextBoxColumn.Name = "shippedDateDataGridViewTextBoxColumn";
-            // 
-            // freightDataGridViewTextBoxColumn
-            // 
-            this.freightDataGridViewTextBoxColumn.DataPropertyName = "Freight";
-            this.freightDataGridViewTextBoxColumn.HeaderText = "Freight";
-            this.freightDataGridViewTextBoxColumn.Name = "freightDataGridViewTextBoxColumn";
-            // 
-            // totalDataGridViewTextBoxColumn
-            // 
-            this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
-            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
-            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
             // 
             // orderObjectBindingSource
             // 
@@ -285,11 +225,11 @@
             // 
             // OrderDetails
             // 
+            this.OrderDetails.Controls.Add(this.button1);
             this.OrderDetails.Controls.Add(this.txtFeightDetails);
             this.OrderDetails.Controls.Add(this.dtOrderDateDetails);
-            this.OrderDetails.Controls.Add(this.dateTimePicker2);
-            this.OrderDetails.Controls.Add(this.dateTimePicker1);
-            this.OrderDetails.Controls.Add(this.txtMemberNameDetails);
+            this.OrderDetails.Controls.Add(this.dtShippedDate);
+            this.OrderDetails.Controls.Add(this.dtRequiredDate);
             this.OrderDetails.Controls.Add(this.txtMemberIdDetails);
             this.OrderDetails.Controls.Add(this.txtOderIdDetails);
             this.OrderDetails.Controls.Add(this.btnAddOrderDetails);
@@ -297,7 +237,6 @@
             this.OrderDetails.Controls.Add(this.dgvOrderDetails);
             this.OrderDetails.Controls.Add(this.lbFreight);
             this.OrderDetails.Controls.Add(this.lbShippedDate);
-            this.OrderDetails.Controls.Add(this.label1);
             this.OrderDetails.Controls.Add(this.lbRequiredDate);
             this.OrderDetails.Controls.Add(this.lbOrderDate);
             this.OrderDetails.Controls.Add(this.lbCustomerId);
@@ -310,52 +249,54 @@
             this.OrderDetails.Text = "Order Details";
             this.OrderDetails.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(694, 302);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 40);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Update";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // txtFeightDetails
             // 
-            this.txtFeightDetails.Location = new System.Drawing.Point(542, 90);
+            this.txtFeightDetails.Enabled = false;
+            this.txtFeightDetails.Location = new System.Drawing.Point(507, 68);
             this.txtFeightDetails.Name = "txtFeightDetails";
             this.txtFeightDetails.ReadOnly = true;
-            this.txtFeightDetails.Size = new System.Drawing.Size(115, 23);
+            this.txtFeightDetails.Size = new System.Drawing.Size(133, 23);
             this.txtFeightDetails.TabIndex = 17;
             // 
             // dtOrderDateDetails
             // 
             this.dtOrderDateDetails.Enabled = false;
             this.dtOrderDateDetails.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtOrderDateDetails.Location = new System.Drawing.Point(354, 13);
+            this.dtOrderDateDetails.Location = new System.Drawing.Point(549, 18);
             this.dtOrderDateDetails.Name = "dtOrderDateDetails";
-            this.dtOrderDateDetails.Size = new System.Drawing.Size(115, 23);
+            this.dtOrderDateDetails.Size = new System.Drawing.Size(91, 23);
             this.dtOrderDateDetails.TabIndex = 16;
             // 
-            // dateTimePicker2
+            // dtShippedDate
             // 
-            this.dateTimePicker2.Enabled = false;
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(354, 88);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(115, 23);
-            this.dateTimePicker2.TabIndex = 15;
+            this.dtShippedDate.Enabled = false;
+            this.dtShippedDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtShippedDate.Location = new System.Drawing.Point(328, 68);
+            this.dtShippedDate.Name = "dtShippedDate";
+            this.dtShippedDate.Size = new System.Drawing.Size(115, 23);
+            this.dtShippedDate.TabIndex = 15;
             // 
-            // dateTimePicker1
+            // dtRequiredDate
             // 
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(104, 90);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(126, 23);
-            this.dateTimePicker1.TabIndex = 14;
-            // 
-            // txtMemberNameDetails
-            // 
-            this.txtMemberNameDetails.Location = new System.Drawing.Point(354, 49);
-            this.txtMemberNameDetails.Name = "txtMemberNameDetails";
-            this.txtMemberNameDetails.ReadOnly = true;
-            this.txtMemberNameDetails.Size = new System.Drawing.Size(115, 23);
-            this.txtMemberNameDetails.TabIndex = 13;
+            this.dtRequiredDate.Enabled = false;
+            this.dtRequiredDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtRequiredDate.Location = new System.Drawing.Point(133, 68);
+            this.dtRequiredDate.Name = "dtRequiredDate";
+            this.dtRequiredDate.Size = new System.Drawing.Size(98, 23);
+            this.dtRequiredDate.TabIndex = 14;
             // 
             // txtMemberIdDetails
             // 
-            this.txtMemberIdDetails.Location = new System.Drawing.Point(104, 51);
+            this.txtMemberIdDetails.Location = new System.Drawing.Point(302, 18);
             this.txtMemberIdDetails.Name = "txtMemberIdDetails";
             this.txtMemberIdDetails.ReadOnly = true;
             this.txtMemberIdDetails.Size = new System.Drawing.Size(126, 23);
@@ -363,7 +304,7 @@
             // 
             // txtOderIdDetails
             // 
-            this.txtOderIdDetails.Location = new System.Drawing.Point(104, 11);
+            this.txtOderIdDetails.Location = new System.Drawing.Point(100, 18);
             this.txtOderIdDetails.Name = "txtOderIdDetails";
             this.txtOderIdDetails.ReadOnly = true;
             this.txtOderIdDetails.Size = new System.Drawing.Size(126, 23);
@@ -371,16 +312,17 @@
             // 
             // btnAddOrderDetails
             // 
-            this.btnAddOrderDetails.Location = new System.Drawing.Point(592, 155);
+            this.btnAddOrderDetails.Location = new System.Drawing.Point(694, 117);
             this.btnAddOrderDetails.Name = "btnAddOrderDetails";
             this.btnAddOrderDetails.Size = new System.Drawing.Size(75, 43);
             this.btnAddOrderDetails.TabIndex = 10;
             this.btnAddOrderDetails.Text = "Add Product";
             this.btnAddOrderDetails.UseVisualStyleBackColor = true;
+            this.btnAddOrderDetails.Click += new System.EventHandler(this.btnAddOrderDetails_Click);
             // 
             // btnCreateOderDetails
             // 
-            this.btnCreateOderDetails.Location = new System.Drawing.Point(592, 216);
+            this.btnCreateOderDetails.Location = new System.Drawing.Point(694, 211);
             this.btnCreateOderDetails.Name = "btnCreateOderDetails";
             this.btnCreateOderDetails.Size = new System.Drawing.Size(75, 40);
             this.btnCreateOderDetails.TabIndex = 9;
@@ -391,16 +333,17 @@
             // 
             this.dgvOrderDetails.AllowUserToOrderColumns = true;
             this.dgvOrderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrderDetails.Location = new System.Drawing.Point(8, 155);
+            this.dgvOrderDetails.Location = new System.Drawing.Point(8, 117);
             this.dgvOrderDetails.Name = "dgvOrderDetails";
             this.dgvOrderDetails.RowTemplate.Height = 25;
-            this.dgvOrderDetails.Size = new System.Drawing.Size(578, 197);
+            this.dgvOrderDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOrderDetails.Size = new System.Drawing.Size(665, 235);
             this.dgvOrderDetails.TabIndex = 8;
             // 
             // lbFreight
             // 
             this.lbFreight.AutoSize = true;
-            this.lbFreight.Location = new System.Drawing.Point(482, 97);
+            this.lbFreight.Location = new System.Drawing.Point(453, 72);
             this.lbFreight.Name = "lbFreight";
             this.lbFreight.Size = new System.Drawing.Size(44, 15);
             this.lbFreight.TabIndex = 7;
@@ -409,25 +352,16 @@
             // lbShippedDate
             // 
             this.lbShippedDate.AutoSize = true;
-            this.lbShippedDate.Location = new System.Drawing.Point(252, 97);
+            this.lbShippedDate.Location = new System.Drawing.Point(241, 72);
             this.lbShippedDate.Name = "lbShippedDate";
             this.lbShippedDate.Size = new System.Drawing.Size(77, 15);
             this.lbShippedDate.TabIndex = 6;
             this.lbShippedDate.Text = "Shipped Date";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(252, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 15);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Member Name";
-            // 
             // lbRequiredDate
             // 
             this.lbRequiredDate.AutoSize = true;
-            this.lbRequiredDate.Location = new System.Drawing.Point(7, 97);
+            this.lbRequiredDate.Location = new System.Drawing.Point(42, 72);
             this.lbRequiredDate.Name = "lbRequiredDate";
             this.lbRequiredDate.Size = new System.Drawing.Size(81, 15);
             this.lbRequiredDate.TabIndex = 4;
@@ -436,7 +370,7 @@
             // lbOrderDate
             // 
             this.lbOrderDate.AutoSize = true;
-            this.lbOrderDate.Location = new System.Drawing.Point(252, 22);
+            this.lbOrderDate.Location = new System.Drawing.Point(467, 22);
             this.lbOrderDate.Name = "lbOrderDate";
             this.lbOrderDate.Size = new System.Drawing.Size(64, 15);
             this.lbOrderDate.TabIndex = 3;
@@ -445,7 +379,7 @@
             // lbCustomerId
             // 
             this.lbCustomerId.AutoSize = true;
-            this.lbCustomerId.Location = new System.Drawing.Point(8, 58);
+            this.lbCustomerId.Location = new System.Drawing.Point(231, 22);
             this.lbCustomerId.Name = "lbCustomerId";
             this.lbCustomerId.Size = new System.Drawing.Size(66, 15);
             this.lbCustomerId.TabIndex = 2;
@@ -454,7 +388,7 @@
             // lbOrderId
             // 
             this.lbOrderId.AutoSize = true;
-            this.lbOrderId.Location = new System.Drawing.Point(8, 22);
+            this.lbOrderId.Location = new System.Drawing.Point(44, 22);
             this.lbOrderId.Name = "lbOrderId";
             this.lbOrderId.Size = new System.Drawing.Size(51, 15);
             this.lbOrderId.TabIndex = 1;
@@ -510,29 +444,23 @@
         private System.Windows.Forms.TabPage OrderDetails;
         private System.Windows.Forms.TextBox txtFeightDetails;
         private System.Windows.Forms.DateTimePicker dtOrderDateDetails;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox txtMemberNameDetails;
+        private System.Windows.Forms.DateTimePicker dtShippedDate;
+        private System.Windows.Forms.DateTimePicker dtRequiredDate;
         private System.Windows.Forms.TextBox txtMemberIdDetails;
         private System.Windows.Forms.TextBox txtOderIdDetails;
-        private System.Windows.Forms.Button btnAddOrderDetails;
         private System.Windows.Forms.Button btnCreateOderDetails;
         private System.Windows.Forms.DataGridView dgvOrderDetails;
         private System.Windows.Forms.Label lbFreight;
         private System.Windows.Forms.Label lbShippedDate;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbRequiredDate;
         private System.Windows.Forms.Label lbOrderDate;
         private System.Windows.Forms.Label lbCustomerId;
         private System.Windows.Forms.Label lbOrderId;
         private System.Windows.Forms.TabPage Report;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn memberIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn requiredDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn shippedDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn freightDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
+
         private System.Windows.Forms.BindingSource orderObjectBindingSource;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddOrderDetails;
+
     }
 }

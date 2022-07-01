@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessObject;
+using DataAccess.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,8 +17,17 @@ namespace SalesWinApp
         public frmAddProductOrderDetails()
         {
             InitializeComponent();
+            LoadComboBoxProduct();
         }
 
+        ProductRepository productRepository = new ProductRepository();
+        private void LoadComboBoxProduct()
+        {
+
+            List<ProductObject> list = productRepository.GetProductObjects();
+            BindingList<string> data = new BindingList<string>(list.Select(p => p.ProductName).ToList());
+            cbProducts.DataSource = data;
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
@@ -35,6 +46,11 @@ namespace SalesWinApp
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbProducts_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

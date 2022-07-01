@@ -64,21 +64,48 @@ namespace DataAccess.Repository
         }
         public List<OrderObject> GetOrderObjects()
         {
+
+            FStore2Context db = new FStore2Context();
             List<OrderObject> listResult = new List<OrderObject>();
-            List<Order> orders = new List<Order>();
+            List<Order> orders = db.Orders.ToList();
+
             var config = new MapperConfiguration(cfg =>
                 cfg.CreateMap<Order, OrderObject>()
             );
             //Using AutoMapper
             var mapper = new Mapper(config);
-            FStore2Context db = new FStore2Context();
+
+            
             foreach (Order order in orders)
             {
+                order.OrderDetails = db.OrderDetails.Where(x => x.OrderId == order.OrderId).ToList();
+
                 OrderObject ob = mapper.Map<OrderObject>(order);
                 ob.Total = order.OrderDetails.Sum(o => o.Quantity * (1 - o.Discount) * (double)o.UnitPrice);
                 listResult.Add(ob);
             }
             return listResult;
         }
+
+        public List<OrderObject> GetOrderObjectsByUser(MemberObject user)
+        {
+            List<OrderObject> listResult = new List<OrderObject>();
+            // mapp initial config
+            var config = new MapperConfiguration(cfg =>
+                cfg.CreateMap<Order, OrderObject>()
+            );
+            //Using AutoMapper
+            var mapper = new Mapper(config);
+            if (user.Role == 0)
+            {
+                listResult = GetOrderObjects();
+            }
+            else
+            {
+                listResult = GetOrderObjects().Where(o => o.MemberId == user.MemberId).ToList();
+            }
+            return listResult;
+        }
+
     }
 }
