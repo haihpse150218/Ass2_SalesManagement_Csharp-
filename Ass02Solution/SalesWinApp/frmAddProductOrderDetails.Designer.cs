@@ -33,11 +33,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnSaveAddOrderDetails = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbProducts = new System.Windows.Forms.ComboBox();
             this.nmQuantity = new System.Windows.Forms.NumericUpDown();
             this.lbProduct = new System.Windows.Forms.Label();
-            this.lbCategory = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmQuantity)).BeginInit();
             this.SuspendLayout();
@@ -91,21 +89,14 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // comboBox2
+            // cbProducts
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(73, 46);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(155, 23);
-            this.comboBox2.TabIndex = 15;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(73, 11);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(155, 23);
-            this.comboBox1.TabIndex = 14;
+            this.cbProducts.FormattingEnabled = true;
+            this.cbProducts.Location = new System.Drawing.Point(73, 25);
+            this.cbProducts.Name = "cbProducts";
+            this.cbProducts.Size = new System.Drawing.Size(155, 23);
+            this.cbProducts.TabIndex = 15;
+            this.cbProducts.Click += new System.EventHandler(this.cbProducts_Click);
             // 
             // nmQuantity
             // 
@@ -127,20 +118,11 @@
             // lbProduct
             // 
             this.lbProduct.AutoSize = true;
-            this.lbProduct.Location = new System.Drawing.Point(12, 49);
+            this.lbProduct.Location = new System.Drawing.Point(12, 28);
             this.lbProduct.Name = "lbProduct";
             this.lbProduct.Size = new System.Drawing.Size(49, 15);
             this.lbProduct.TabIndex = 12;
             this.lbProduct.Text = "Product";
-            // 
-            // lbCategory
-            // 
-            this.lbCategory.AutoSize = true;
-            this.lbCategory.Location = new System.Drawing.Point(12, 14);
-            this.lbCategory.Name = "lbCategory";
-            this.lbCategory.Size = new System.Drawing.Size(55, 15);
-            this.lbCategory.TabIndex = 11;
-            this.lbCategory.Text = "Category";
             // 
             // frmAddProductOrderDetails
             // 
@@ -152,11 +134,9 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnSaveAddOrderDetails);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbProducts);
             this.Controls.Add(this.nmQuantity);
             this.Controls.Add(this.lbProduct);
-            this.Controls.Add(this.lbCategory);
             this.Name = "frmAddProductOrderDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddProductOrderDetails";
@@ -174,10 +154,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnSaveAddOrderDetails;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbProducts;
         private System.Windows.Forms.NumericUpDown nmQuantity;
         private System.Windows.Forms.Label lbProduct;
-        private System.Windows.Forms.Label lbCategory;
     }
 }

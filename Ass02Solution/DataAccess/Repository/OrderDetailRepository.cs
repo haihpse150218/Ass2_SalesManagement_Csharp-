@@ -1,4 +1,7 @@
-﻿using BusinessObject;
+
+﻿using AutoMapper;
+using BusinessObject;
+
 using DataAccess.Models;
 using System;
 using System.Collections.Generic;
@@ -30,8 +33,33 @@ namespace DataAccess.Repository
             
             } 
         }
-       
+
         FStore2Context db = new FStore2Context();
-        
+        public List<OrderDetailObjec> GetOrderDetails()
+        {
+            List<OrderDetailObjec> listResult = new List<OrderDetailObjec>();
+            var config = new MapperConfiguration(cfg =>
+               cfg.CreateMap<OrderDetail, OrderDetailObjec>()
+           );
+            //Using AutoMapper
+            var mapper = new Mapper(config);
+           foreach(OrderDetail od in db.OrderDetails.ToList())
+            {
+                OrderDetailObjec orderDetail = mapper.Map<OrderDetailObjec>(od);
+                listResult.Add(orderDetail);
+            }
+            return listResult;
+        }
+
+        public List<OrderDetailObjec> GetOrderDetailObjecstByOrderId(int orderId)
+        {
+            List<OrderDetailObjec> listResult = new List<OrderDetailObjec>();
+            listResult = GetOrderDetails().Where(o => o.OrderId == orderId).ToList();
+            return listResult;
+        }
+       
+
+
+
     }
 }
