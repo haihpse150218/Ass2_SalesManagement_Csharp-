@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,10 @@ namespace SalesWinApp
         public frmMain()
         {
             InitializeComponent();
+            
         }
+
+
 
         private void memberManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -46,7 +50,15 @@ namespace SalesWinApp
             {
                 if (form.Name == "frmProducts")
                 {
-                    form.Show();
+                    if(frmLogin.User.Role==1)
+                    {
+                        MessageBox.Show("You can't access to this tab!");
+                    }
+                    else
+                    {
+                        form.Show();
+                    }
+                    
                 }
                 else
                 {
@@ -55,10 +67,18 @@ namespace SalesWinApp
             }
             if (this.MdiChildren.Count() == 0)
             {
-                frmProducts frmProducts = new frmProducts();
-                frmProducts.MdiParent = this;
-                frmProducts.Dock = DockStyle.Fill;
-                frmProducts.Show();
+                if (frmLogin.User.Role == 1)
+                {
+                    MessageBox.Show("You can't access to this tab!");
+                }
+                else
+                {
+                    frmProducts frmProducts = new frmProducts();
+                    frmProducts.MdiParent = this;
+                    frmProducts.Dock = DockStyle.Fill;
+                    frmProducts.Show();
+                }
+                
             }
         }
 
@@ -69,6 +89,7 @@ namespace SalesWinApp
             {
                 if (form.Name == "frmOrders")
                 {
+                    
                     form.Show();
                 }
                 else
@@ -83,6 +104,11 @@ namespace SalesWinApp
                 frmOrders.Dock = DockStyle.Fill;
                 frmOrders.Show();
             }
+        }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

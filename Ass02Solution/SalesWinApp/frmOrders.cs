@@ -24,8 +24,15 @@ namespace SalesWinApp
 
         private void btnCreateOrder_Click(object sender, EventArgs e)
         {
-            frmAddProductOrderDetails frmAddProductOrderDetails = new frmAddProductOrderDetails();
-            frmAddProductOrderDetails.ShowDialog();
+            if (frmLogin.User.Role == 1)
+            {
+                frmAddProductOrderDetails frmAddProductOrderDetails = new frmAddProductOrderDetails();
+                frmAddProductOrderDetails.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You can't access to this tab!");
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

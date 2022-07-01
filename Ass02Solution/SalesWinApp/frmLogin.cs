@@ -23,12 +23,22 @@ namespace SalesWinApp
 
             User = Login(email, password);
             if (User != null)
-
             {
-                frmMain frmMain = new frmMain(); ;
-                this.Hide();
-                frmMain.ShowDialog();
-                this.Show();
+                if(User.Email.Equals("admin@fstore.com"))
+                {
+                    frmMain frmMain = new frmMain(); ;
+                    this.Hide();
+                    frmMain.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    frmMain frmMain = new frmMain();
+                    this.Hide();
+                    frmMain.ShowDialog();
+                    this.Show();
+                }
+                
             }
         }
 
@@ -64,7 +74,7 @@ namespace SalesWinApp
 
         private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Are you sur to exit?", "Exit Confirm", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.Cancel)
+            if (MessageBox.Show("Are you sure to exit?", "Exit Confirm", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.Cancel)
             {
                 e.Cancel = true;
             }
