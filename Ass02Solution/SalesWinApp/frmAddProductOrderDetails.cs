@@ -128,8 +128,7 @@ namespace SalesWinApp
                 }
                 foreach (OrderDetailObjec order in listOrderDetails)
                 {
-                    int pid = order.ProductId;
-                    int oid = order.OrderId;
+
                     OrderDetail saveOrder = mapper.Map<OrderDetail>(order);
                     db.OrderDetails.Add(saveOrder);
                 }

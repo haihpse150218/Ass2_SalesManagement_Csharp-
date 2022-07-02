@@ -87,7 +87,7 @@ namespace SalesWinApp
 
         private void btnCreateReport_Click(object sender, EventArgs e)
         {
-
+            listViewReport.Clear();
             tabOrders.SelectedIndex = 2;
             listViewReport.Columns.Add("Order Id").AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
             listViewReport.Columns.Add("Member Id").AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
