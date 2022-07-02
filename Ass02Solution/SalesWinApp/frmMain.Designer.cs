@@ -32,7 +32,6 @@
             this.memberManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportStatisticsSalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -43,7 +42,6 @@
             this.memberManagementToolStripMenuItem,
             this.productManagementToolStripMenuItem,
             this.orderManagementToolStripMenuItem,
-            this.reportStatisticsSalesToolStripMenuItem,
             this.loginToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -72,17 +70,11 @@
             this.orderManagementToolStripMenuItem.Text = "Order management";
             this.orderManagementToolStripMenuItem.Click += new System.EventHandler(this.orderManagementToolStripMenuItem_Click);
             // 
-            // reportStatisticsSalesToolStripMenuItem
-            // 
-            this.reportStatisticsSalesToolStripMenuItem.Name = "reportStatisticsSalesToolStripMenuItem";
-            this.reportStatisticsSalesToolStripMenuItem.Size = new System.Drawing.Size(132, 20);
-            this.reportStatisticsSalesToolStripMenuItem.Text = "Report Statistics Sales";
-            // 
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.loginToolStripMenuItem.Text = "Login";
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.loginToolStripMenuItem.Text = "Logout";
             // 
             // frmMain
             // 
@@ -108,7 +100,6 @@
         private System.Windows.Forms.ToolStripMenuItem memberManagementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productManagementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem orderManagementToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportStatisticsSalesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
     }
 }
