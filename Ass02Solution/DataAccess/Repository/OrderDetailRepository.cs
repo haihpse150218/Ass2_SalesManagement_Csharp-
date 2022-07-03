@@ -31,9 +31,10 @@ namespace DataAccess.Repository
             } 
         }
 
-        FStore2Context db = new FStore2Context();
+        
         public List<OrderDetailObjec> GetOrderDetails()
         {
+            FStore2Context db = new FStore2Context();
             List<OrderDetailObjec> listResult = new List<OrderDetailObjec>();
             var config = new MapperConfiguration(cfg =>
                cfg.CreateMap<OrderDetail, OrderDetailObjec>()
@@ -50,6 +51,7 @@ namespace DataAccess.Repository
 
         public List<OrderDetailObjec> GetOrderDetailObjecstByOrderId(int orderId)
         {
+            FStore2Context db = new FStore2Context();
             List<OrderDetailObjec> listResult = new List<OrderDetailObjec>();
             listResult = GetOrderDetails().Where(o => o.OrderId == orderId).ToList();
             return listResult;

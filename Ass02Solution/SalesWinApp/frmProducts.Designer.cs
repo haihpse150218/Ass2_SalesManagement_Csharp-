@@ -38,12 +38,14 @@
             this.cbSearchSelect = new System.Windows.Forms.ComboBox();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnLoadAllProduct = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnLoadAllProduct);
             this.panel1.Controls.Add(this.btnEditProduct);
             this.panel1.Controls.Add(this.btnRemoveProduct);
             this.panel1.Controls.Add(this.btnCreateProduct);
@@ -89,7 +91,7 @@
             // 
             // btnSearchProduct
             // 
-            this.btnSearchProduct.Location = new System.Drawing.Point(454, 17);
+            this.btnSearchProduct.Location = new System.Drawing.Point(445, 17);
             this.btnSearchProduct.Name = "btnSearchProduct";
             this.btnSearchProduct.Size = new System.Drawing.Size(93, 23);
             this.btnSearchProduct.TabIndex = 3;
@@ -132,6 +134,16 @@
             this.dgvProduct.TabIndex = 0;
             this.dgvProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellContentClick);
             // 
+            // btnLoadAllProduct
+            // 
+            this.btnLoadAllProduct.Location = new System.Drawing.Point(544, 16);
+            this.btnLoadAllProduct.Name = "btnLoadAllProduct";
+            this.btnLoadAllProduct.Size = new System.Drawing.Size(80, 23);
+            this.btnLoadAllProduct.TabIndex = 8;
+            this.btnLoadAllProduct.Text = "Load All";
+            this.btnLoadAllProduct.UseVisualStyleBackColor = true;
+            this.btnLoadAllProduct.Click += new System.EventHandler(this.btnLoadAllProduct_Click);
+            // 
             // frmProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -160,5 +172,6 @@
         private System.Windows.Forms.TextBox txtSearchBox;
         private System.Windows.Forms.ComboBox cbSearchSelect;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnLoadAllProduct;
     }
 }

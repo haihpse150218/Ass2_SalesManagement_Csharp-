@@ -87,41 +87,49 @@ namespace SalesWinApp
 
         private void btnCreateReport_Click(object sender, EventArgs e)
         {
-            listViewReport.Clear();
-            tabOrders.SelectedIndex = 2;
-            listViewReport.Columns.Add("Order Id").AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
-            listViewReport.Columns.Add("Member Id").AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
-            listViewReport.Columns.Add("Total").AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
-            double total = 0;
-            
-           
-            for (int row = 0; row < dgvOrder.Rows.Count; row++)
+            if (frmLogin.User.Role == 1)
             {
-                OrderObject order = dgvOrder.Rows[row].DataBoundItem as OrderObject;
-                if(order != null)
-                {
-                    ListViewItem colOrderId = new ListViewItem();
-                    colOrderId.Text = order.OrderId.ToString();
-                    colOrderId.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = order.MemberId.ToString() });
-                    colOrderId.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = order.Total.ToString() });
-                    total += order.Total;
-                    listViewReport.Items.Add(colOrderId);
-                }
-                
+                MessageBox.Show("You can't access to this tab!");
             }
-            ListViewItem brackLine = new ListViewItem();
-            brackLine.Text = "=====";
-            brackLine.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = "=====" });
-            brackLine.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = "=====" });
-            listViewReport.Items.Add(brackLine);
+            else
+            {
+                listViewReport.Clear();
+                tabOrders.SelectedIndex = 2;
+                listViewReport.Columns.Add("Order Id").AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
+                listViewReport.Columns.Add("Member Id").AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
+                listViewReport.Columns.Add("Total").AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
+                double total = 0;
 
-            ListViewItem sum = new ListViewItem();
-            sum.Text = "Sum";
-            sum.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = "" });
-            sum.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = total.ToString() });
-            listViewReport.Items.Add(sum);
-            listViewReport.Show();
-            listViewReport.View = View.Details;
+
+                for (int row = 0; row < dgvOrder.Rows.Count; row++)
+                {
+                    OrderObject order = dgvOrder.Rows[row].DataBoundItem as OrderObject;
+                    if (order != null)
+                    {
+                        ListViewItem colOrderId = new ListViewItem();
+                        colOrderId.Text = order.OrderId.ToString();
+                        colOrderId.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = order.MemberId.ToString() });
+                        colOrderId.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = order.Total.ToString() });
+                        total += order.Total;
+                        listViewReport.Items.Add(colOrderId);
+                    }
+
+                }
+                ListViewItem brackLine = new ListViewItem();
+                brackLine.Text = "=====";
+                brackLine.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = "=====" });
+                brackLine.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = "=====" });
+                listViewReport.Items.Add(brackLine);
+
+                ListViewItem sum = new ListViewItem();
+                sum.Text = "Sum";
+                sum.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = "" });
+                sum.SubItems.Add(new ListViewItem.ListViewSubItem() { Text = total.ToString() });
+                listViewReport.Items.Add(sum);
+                listViewReport.Show();
+                listViewReport.View = View.Details;
+            }
+            
         }
 
         private void btLoadOrder_Click(object sender, EventArgs e)
@@ -134,9 +142,11 @@ namespace SalesWinApp
 
             if (listOrder.Count == 0)
             {
-                dgvOrder.Columns.Add("Result", "Result");
 
-                dgvOrder.Rows.Add("No Result");
+                List<string> listerror = new List<string>() ;
+                listerror.Add("No Result!");
+                dgvOrder.DataSource =listerror.Select(x => new { Value = x }).ToList();
+                
             }
             else
             {
@@ -155,8 +165,9 @@ namespace SalesWinApp
                OrderRepository.Instance.GetOrderObjectsByUser(frmLogin.User);
             if (listOrder.Count == 0)
             {
-                dgvOrder.Columns.Add("Result", "Result");
-                dgvOrder.Rows.Add("No Result");
+                List<string> listerror = new List<string>();
+                listerror.Add("No Result!");
+                dgvOrder.DataSource = listerror.Select(x => new { Value = x }).ToList();
             }
             else
             {

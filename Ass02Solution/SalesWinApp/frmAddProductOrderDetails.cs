@@ -49,6 +49,7 @@ namespace SalesWinApp
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            FStore2Context db = new FStore2Context();
             ProductObject product = cbProducts.SelectedItem as ProductObject;
             if (product == null)
             {
@@ -125,7 +126,9 @@ namespace SalesWinApp
                 {
                     db.OrderDetails.Attach(obj);
                     db.OrderDetails.Remove(obj);
+                    
                 }
+                db.SaveChanges();
                 foreach (OrderDetailObjec order in listOrderDetails)
                 {
 

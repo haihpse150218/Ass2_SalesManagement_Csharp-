@@ -192,5 +192,13 @@ namespace SalesWinApp
                 dgvProduct.DataSource = source;
             }
         }
+
+        private void btnLoadAllProduct_Click(object sender, EventArgs e)
+        {
+            FStore2Context db = new FStore2Context();
+            List <Product> pList = db.Products.ToList();
+            BindingList<Product> source = new BindingList<Product>(pList);
+            dgvProduct.DataSource=source;
+        }
     }
 }

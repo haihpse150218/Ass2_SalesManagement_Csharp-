@@ -56,10 +56,18 @@ namespace SalesWinApp
             }
             if (this.MdiChildren.Count() == 0)
             {
-                frmProducts frmProducts = new frmProducts();
-                frmProducts.MdiParent = this;
-                frmProducts.Dock = DockStyle.Fill;
-                frmProducts.Show();
+                if (frmLogin.User.Role == 1)
+                {
+                    MessageBox.Show("You can't access to this tab!");
+                }
+                else
+                {
+                    frmProducts frmProducts = new frmProducts();
+                    frmProducts.MdiParent = this;
+                    frmProducts.Dock = DockStyle.Fill;
+                    frmProducts.Show();
+                }
+
             }
         }
 
@@ -83,6 +91,16 @@ namespace SalesWinApp
                 frmOrders.MdiParent = this;
                 frmOrders.Dock = DockStyle.Fill;
                 frmOrders.Show();
+            }
+        }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e) => this.Close();
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure to exit?", "Exit Confirm", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.Cancel)
+            {
+                e.Cancel = true;
             }
         }
     }

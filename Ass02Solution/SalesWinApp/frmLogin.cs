@@ -65,7 +65,7 @@ namespace SalesWinApp
 
         private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Are you sur to exit?", "Exit Confirm", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.Cancel)
+            if (MessageBox.Show("Are you sure to exit?", "Exit Confirm", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.Cancel)
             {
                 e.Cancel = true;
             }
