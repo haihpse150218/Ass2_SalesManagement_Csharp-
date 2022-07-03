@@ -31,21 +31,17 @@
             this.components = new System.ComponentModel.Container();
             this.tabOrders = new System.Windows.Forms.TabControl();
             this.Orders = new System.Windows.Forms.TabPage();
-            this.btnCreateOrder = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.btnSortSalesDescending = new System.Windows.Forms.Button();
             this.btnCreateReport = new System.Windows.Forms.Button();
             this.btnViewDetails = new System.Windows.Forms.Button();
             this.btnLoadAllOrder = new System.Windows.Forms.Button();
             this.dgvOrder = new System.Windows.Forms.DataGridView();
-            this.orderObjectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dtToDateOrder = new System.Windows.Forms.DateTimePicker();
             this.lbToDate = new System.Windows.Forms.Label();
             this.dtFromDateOrder = new System.Windows.Forms.DateTimePicker();
             this.lbFromDate = new System.Windows.Forms.Label();
             this.btLoadOrder = new System.Windows.Forms.Button();
             this.OrderDetails = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtFeightDetails = new System.Windows.Forms.TextBox();
             this.dtOrderDateDetails = new System.Windows.Forms.DateTimePicker();
             this.dtShippedDate = new System.Windows.Forms.DateTimePicker();
@@ -53,7 +49,6 @@
             this.txtMemberIdDetails = new System.Windows.Forms.TextBox();
             this.txtOderIdDetails = new System.Windows.Forms.TextBox();
             this.btnAddOrderDetails = new System.Windows.Forms.Button();
-            this.btnCreateOderDetails = new System.Windows.Forms.Button();
             this.dgvOrderDetails = new System.Windows.Forms.DataGridView();
             this.lbFreight = new System.Windows.Forms.Label();
             this.lbShippedDate = new System.Windows.Forms.Label();
@@ -62,12 +57,18 @@
             this.lbCustomerId = new System.Windows.Forms.Label();
             this.lbOrderId = new System.Windows.Forms.Label();
             this.Report = new System.Windows.Forms.TabPage();
+            this.listViewReport = new System.Windows.Forms.ListView();
+            this.lbReport = new System.Windows.Forms.Label();
+            this.orderObjectBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.orderObjectBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabOrders.SuspendLayout();
             this.Orders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderObjectBindingSource)).BeginInit();
             this.OrderDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetails)).BeginInit();
+            this.Report.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderObjectBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderObjectBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabOrders
@@ -84,8 +85,6 @@
             // 
             // Orders
             // 
-            this.Orders.Controls.Add(this.btnCreateOrder);
-            this.Orders.Controls.Add(this.btnEdit);
             this.Orders.Controls.Add(this.btnSortSalesDescending);
             this.Orders.Controls.Add(this.btnCreateReport);
             this.Orders.Controls.Add(this.btnViewDetails);
@@ -104,31 +103,11 @@
             this.Orders.Text = "Orders";
             this.Orders.UseVisualStyleBackColor = true;
             // 
-            // btnCreateOrder
-            // 
-            this.btnCreateOrder.Location = new System.Drawing.Point(671, 114);
-            this.btnCreateOrder.Name = "btnCreateOrder";
-            this.btnCreateOrder.Size = new System.Drawing.Size(83, 43);
-            this.btnCreateOrder.TabIndex = 12;
-            this.btnCreateOrder.Text = "Create Order";
-            this.btnCreateOrder.UseVisualStyleBackColor = true;
-            this.btnCreateOrder.Click += new System.EventHandler(this.btnCreateOrder_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(671, 173);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(83, 43);
-            this.btnEdit.TabIndex = 11;
-            this.btnEdit.Text = "Edit Order";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
             // btnSortSalesDescending
             // 
-            this.btnSortSalesDescending.Location = new System.Drawing.Point(671, 241);
+            this.btnSortSalesDescending.Location = new System.Drawing.Point(671, 164);
             this.btnSortSalesDescending.Name = "btnSortSalesDescending";
-            this.btnSortSalesDescending.Size = new System.Drawing.Size(83, 43);
+            this.btnSortSalesDescending.Size = new System.Drawing.Size(83, 59);
             this.btnSortSalesDescending.TabIndex = 10;
             this.btnSortSalesDescending.Text = "Sort Sales In Descending Order";
             this.btnSortSalesDescending.UseVisualStyleBackColor = true;
@@ -136,9 +115,9 @@
             // 
             // btnCreateReport
             // 
-            this.btnCreateReport.Location = new System.Drawing.Point(671, 309);
+            this.btnCreateReport.Location = new System.Drawing.Point(671, 295);
             this.btnCreateReport.Name = "btnCreateReport";
-            this.btnCreateReport.Size = new System.Drawing.Size(83, 43);
+            this.btnCreateReport.Size = new System.Drawing.Size(83, 57);
             this.btnCreateReport.TabIndex = 9;
             this.btnCreateReport.Text = "Create Report";
             this.btnCreateReport.UseVisualStyleBackColor = true;
@@ -174,10 +153,6 @@
             this.dgvOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOrder.Size = new System.Drawing.Size(659, 301);
             this.dgvOrder.TabIndex = 5;
-            // 
-            // orderObjectBindingSource
-            // 
-            this.orderObjectBindingSource.DataSource = typeof(BusinessObject.OrderObject);
             // 
             // dtToDateOrder
             // 
@@ -225,7 +200,6 @@
             // 
             // OrderDetails
             // 
-            this.OrderDetails.Controls.Add(this.button1);
             this.OrderDetails.Controls.Add(this.txtFeightDetails);
             this.OrderDetails.Controls.Add(this.dtOrderDateDetails);
             this.OrderDetails.Controls.Add(this.dtShippedDate);
@@ -233,7 +207,6 @@
             this.OrderDetails.Controls.Add(this.txtMemberIdDetails);
             this.OrderDetails.Controls.Add(this.txtOderIdDetails);
             this.OrderDetails.Controls.Add(this.btnAddOrderDetails);
-            this.OrderDetails.Controls.Add(this.btnCreateOderDetails);
             this.OrderDetails.Controls.Add(this.dgvOrderDetails);
             this.OrderDetails.Controls.Add(this.lbFreight);
             this.OrderDetails.Controls.Add(this.lbShippedDate);
@@ -248,15 +221,6 @@
             this.OrderDetails.TabIndex = 1;
             this.OrderDetails.Text = "Order Details";
             this.OrderDetails.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(694, 302);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 40);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // txtFeightDetails
             // 
@@ -312,26 +276,16 @@
             // 
             // btnAddOrderDetails
             // 
-            this.btnAddOrderDetails.Location = new System.Drawing.Point(694, 117);
+            this.btnAddOrderDetails.Location = new System.Drawing.Point(688, 117);
             this.btnAddOrderDetails.Name = "btnAddOrderDetails";
-            this.btnAddOrderDetails.Size = new System.Drawing.Size(75, 43);
+            this.btnAddOrderDetails.Size = new System.Drawing.Size(75, 72);
             this.btnAddOrderDetails.TabIndex = 10;
-            this.btnAddOrderDetails.Text = "Add Product";
+            this.btnAddOrderDetails.Text = "Edit Order Details";
             this.btnAddOrderDetails.UseVisualStyleBackColor = true;
             this.btnAddOrderDetails.Click += new System.EventHandler(this.btnAddOrderDetails_Click);
             // 
-            // btnCreateOderDetails
-            // 
-            this.btnCreateOderDetails.Location = new System.Drawing.Point(694, 211);
-            this.btnCreateOderDetails.Name = "btnCreateOderDetails";
-            this.btnCreateOderDetails.Size = new System.Drawing.Size(75, 40);
-            this.btnCreateOderDetails.TabIndex = 9;
-            this.btnCreateOderDetails.Text = "Edit Order Details";
-            this.btnCreateOderDetails.UseVisualStyleBackColor = true;
-            // 
             // dgvOrderDetails
             // 
-            this.dgvOrderDetails.AllowUserToOrderColumns = true;
             this.dgvOrderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrderDetails.Location = new System.Drawing.Point(8, 117);
             this.dgvOrderDetails.Name = "dgvOrderDetails";
@@ -396,6 +350,8 @@
             // 
             // Report
             // 
+            this.Report.Controls.Add(this.listViewReport);
+            this.Report.Controls.Add(this.lbReport);
             this.Report.Location = new System.Drawing.Point(4, 24);
             this.Report.Name = "Report";
             this.Report.Padding = new System.Windows.Forms.Padding(3);
@@ -403,6 +359,35 @@
             this.Report.TabIndex = 2;
             this.Report.Text = "Report Statistics Sales";
             this.Report.UseVisualStyleBackColor = true;
+            // 
+            // listViewReport
+            // 
+            this.listViewReport.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.listViewReport.HideSelection = false;
+            this.listViewReport.Location = new System.Drawing.Point(8, 66);
+            this.listViewReport.Name = "listViewReport";
+            this.listViewReport.Size = new System.Drawing.Size(765, 286);
+            this.listViewReport.TabIndex = 2;
+            this.listViewReport.UseCompatibleStateImageBehavior = false;
+            this.listViewReport.View = System.Windows.Forms.View.SmallIcon;
+            // 
+            // lbReport
+            // 
+            this.lbReport.AutoSize = true;
+            this.lbReport.Font = new System.Drawing.Font("Stencil", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbReport.Location = new System.Drawing.Point(195, 18);
+            this.lbReport.Name = "lbReport";
+            this.lbReport.Size = new System.Drawing.Size(423, 38);
+            this.lbReport.TabIndex = 1;
+            this.lbReport.Text = "Report Statistics Sales";
+            // 
+            // orderObjectBindingSource
+            // 
+            this.orderObjectBindingSource.DataSource = typeof(BusinessObject.OrderObject);
+            // 
+            // orderObjectBindingSource1
+            // 
+            this.orderObjectBindingSource1.DataSource = typeof(BusinessObject.OrderObject);
             // 
             // frmOrders
             // 
@@ -417,10 +402,13 @@
             this.Orders.ResumeLayout(false);
             this.Orders.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderObjectBindingSource)).EndInit();
             this.OrderDetails.ResumeLayout(false);
             this.OrderDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetails)).EndInit();
+            this.Report.ResumeLayout(false);
+            this.Report.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderObjectBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderObjectBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -429,8 +417,6 @@
 
         private System.Windows.Forms.TabControl tabOrders;
         private System.Windows.Forms.TabPage Orders;
-        private System.Windows.Forms.Button btnCreateOrder;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnSortSalesDescending;
         private System.Windows.Forms.Button btnCreateReport;
         private System.Windows.Forms.Button btnViewDetails;
@@ -448,7 +434,6 @@
         private System.Windows.Forms.DateTimePicker dtRequiredDate;
         private System.Windows.Forms.TextBox txtMemberIdDetails;
         private System.Windows.Forms.TextBox txtOderIdDetails;
-        private System.Windows.Forms.Button btnCreateOderDetails;
         private System.Windows.Forms.DataGridView dgvOrderDetails;
         private System.Windows.Forms.Label lbFreight;
         private System.Windows.Forms.Label lbShippedDate;
@@ -459,8 +444,9 @@
         private System.Windows.Forms.TabPage Report;
 
         private System.Windows.Forms.BindingSource orderObjectBindingSource;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnAddOrderDetails;
-
+        private System.Windows.Forms.Label lbReport;
+        private System.Windows.Forms.BindingSource orderObjectBindingSource1;
+        private System.Windows.Forms.ListView listViewReport;
     }
 }

@@ -47,6 +47,7 @@ namespace DataAccess.Repository
                         OrderObject ob = mapper.Map<OrderObject>(order);
                         ob.Total = order.OrderDetails.Sum(o => o.Quantity * (1 - o.Discount) * (double)o.UnitPrice);
                         listResult.Add(ob);
+                        
                     }
                     else
                     {
@@ -105,6 +106,13 @@ namespace DataAccess.Repository
                 listResult = GetOrderObjects().Where(o => o.MemberId == user.MemberId).ToList();
             }
             return listResult;
+        }
+
+        public List<OrderObject> sortDecByTotal(List<OrderObject> listOrder)
+        {
+            Console.WriteLine(listOrder.ToList());
+            List<OrderObject> listSorted = listOrder.Where(o => o!=null).OrderByDescending(o => o.Total).ToList();
+            return listSorted;
         }
 
     }

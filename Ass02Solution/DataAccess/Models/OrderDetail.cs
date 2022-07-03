@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject;
+using System;
 using System.Collections.Generic;
 
 #nullable disable
@@ -15,5 +16,10 @@ namespace DataAccess.Models
 
         public virtual Order Order { get; set; }
         public virtual Product Product { get; set; }
+
+        public static implicit operator OrderDetail(OrderDetailObjec v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
