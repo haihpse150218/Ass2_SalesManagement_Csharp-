@@ -6,6 +6,7 @@ using System.Linq;
 using BusinessObject;
 using AutoMapper;
 
+
 namespace DataAccess.Repository
 {
 
@@ -42,9 +43,10 @@ namespace DataAccess.Repository
             return defaultAdmin;
         }
 
-        FStore2Context db = new FStore2Context();
+       
         public MemberObject Login(string email, string password, out string msg)
         {
+            FStore2Context db = new FStore2Context();
             //initializing the mapper
             var config = new MapperConfiguration(cfg =>
 
@@ -131,6 +133,24 @@ namespace DataAccess.Repository
             {
                 return false;
             }
+        }
+
+        public List<MemberObject> GetMemberList()
+        {
+            FStore2Context db = new FStore2Context();
+            List<MemberObject> listResult = new List<MemberObject>();
+            List<Member> members = db.Members.ToList();
+            var config = new MapperConfiguration(cfg =>
+               cfg.CreateMap<Member, MemberObject>()
+           );
+            //Using AutoMapper
+            var mapper = new Mapper(config);
+            foreach (Member mem in members)
+            {
+                MemberObject member = mapper.Map<MemberObject>(mem);
+                listResult.Add(member);
+            }
+            return listResult;
         }
 
 
