@@ -54,8 +54,16 @@ namespace SalesWinApp
                 {
                     ProductObject removeProduct = dgvProduct.CurrentRow.DataBoundItem as ProductObject;
                     var result = db.Products.Where(m => m.ProductId == removeProduct.ProductId).FirstOrDefault();
-                    db.Products.Remove(result);
-                    db.SaveChanges();
+                    try
+                    {
+                        db.Products.Remove(result);
+                        db.SaveChanges();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("You can't delete it because Order have reference to it!");
+                    }
+                    
                 }
             }
             loadProductList();

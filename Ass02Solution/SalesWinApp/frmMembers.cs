@@ -46,12 +46,13 @@ namespace SalesWinApp
                     {
                         db.Members.Remove(result);
                         db.SaveChanges();
-                    }catch(Exception ex)
+                    }
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Error When Delete: \n" + ex);
+                        MessageBox.Show("You can't delete it because Order have reference to it!");
                     }
-                        
-                    }
+
+                }
                 }
             
 
