@@ -55,11 +55,15 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(815, 485);
+
             this.panel1.TabIndex = 0;
             // 
             // btnEditProduct
             // 
-            this.btnEditProduct.Location = new System.Drawing.Point(719, 199);
+
+            this.btnEditProduct.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnEditProduct.Location = new System.Drawing.Point(643, 199);
+
             this.btnEditProduct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.Size = new System.Drawing.Size(86, 63);
@@ -70,7 +74,9 @@
             // 
             // btnRemoveProduct
             // 
+
             this.btnRemoveProduct.Location = new System.Drawing.Point(719, 333);
+
             this.btnRemoveProduct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRemoveProduct.Name = "btnRemoveProduct";
             this.btnRemoveProduct.Size = new System.Drawing.Size(86, 63);
@@ -81,7 +87,9 @@
             // 
             // btnCreateProduct
             // 
+
             this.btnCreateProduct.Location = new System.Drawing.Point(719, 64);
+
             this.btnCreateProduct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCreateProduct.Name = "btnCreateProduct";
             this.btnCreateProduct.Size = new System.Drawing.Size(86, 63);
@@ -92,7 +100,9 @@
             // 
             // btnSearchProduct
             // 
-            this.btnSearchProduct.Location = new System.Drawing.Point(606, 19);
+
+            this.btnSearchProduct.Location = new System.Drawing.Point(519, 23);
+
             this.btnSearchProduct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearchProduct.Name = "btnSearchProduct";
             this.btnSearchProduct.Size = new System.Drawing.Size(106, 31);
@@ -103,7 +113,9 @@
             // 
             // txtSearchBox
             // 
-            this.txtSearchBox.Location = new System.Drawing.Point(356, 19);
+
+            this.txtSearchBox.Location = new System.Drawing.Point(269, 23);
+
             this.txtSearchBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearchBox.Name = "txtSearchBox";
             this.txtSearchBox.PlaceholderText = "Searching ...";
@@ -119,7 +131,8 @@
             "Search By Product Name",
             "Search By Unit In Stock",
             "Search By Unit Price"});
-            this.cbSearchSelect.Location = new System.Drawing.Point(148, 19);
+
+            this.cbSearchSelect.Location = new System.Drawing.Point(61, 23);
             this.cbSearchSelect.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbSearchSelect.Name = "cbSearchSelect";
             this.cbSearchSelect.Size = new System.Drawing.Size(190, 28);
@@ -129,6 +142,7 @@
             // 
             // dgvProduct
             // 
+
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProduct.Location = new System.Drawing.Point(3, 64);
             this.dgvProduct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -138,12 +152,15 @@
             this.dgvProduct.Size = new System.Drawing.Size(710, 417);
             this.dgvProduct.TabIndex = 0;
             this.dgvProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellContentClick);
+
             // 
             // frmProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(818, 517);
+
+            this.ClientSize = new System.Drawing.Size(775, 517);
+
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmProducts";
