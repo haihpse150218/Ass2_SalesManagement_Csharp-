@@ -36,10 +36,10 @@
             this.btnSearchProduct = new System.Windows.Forms.Button();
             this.txtSearchBox = new System.Windows.Forms.TextBox();
             this.cbSearchSelect = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvProduct = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -50,17 +50,19 @@
             this.panel1.Controls.Add(this.btnSearchProduct);
             this.panel1.Controls.Add(this.txtSearchBox);
             this.panel1.Controls.Add(this.cbSearchSelect);
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Controls.Add(this.dgvProduct);
+            this.panel1.Location = new System.Drawing.Point(1, 16);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(654, 364);
+            this.panel1.Size = new System.Drawing.Size(815, 485);
             this.panel1.TabIndex = 0;
             // 
             // btnEditProduct
             // 
-            this.btnEditProduct.Location = new System.Drawing.Point(563, 149);
+            this.btnEditProduct.Location = new System.Drawing.Point(719, 199);
+            this.btnEditProduct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEditProduct.Name = "btnEditProduct";
-            this.btnEditProduct.Size = new System.Drawing.Size(75, 47);
+            this.btnEditProduct.Size = new System.Drawing.Size(86, 63);
             this.btnEditProduct.TabIndex = 7;
             this.btnEditProduct.Text = "Edit Product";
             this.btnEditProduct.UseVisualStyleBackColor = true;
@@ -68,9 +70,10 @@
             // 
             // btnRemoveProduct
             // 
-            this.btnRemoveProduct.Location = new System.Drawing.Point(563, 250);
+            this.btnRemoveProduct.Location = new System.Drawing.Point(719, 333);
+            this.btnRemoveProduct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRemoveProduct.Name = "btnRemoveProduct";
-            this.btnRemoveProduct.Size = new System.Drawing.Size(75, 47);
+            this.btnRemoveProduct.Size = new System.Drawing.Size(86, 63);
             this.btnRemoveProduct.TabIndex = 6;
             this.btnRemoveProduct.Text = "Remove Product";
             this.btnRemoveProduct.UseVisualStyleBackColor = true;
@@ -78,9 +81,10 @@
             // 
             // btnCreateProduct
             // 
-            this.btnCreateProduct.Location = new System.Drawing.Point(563, 48);
+            this.btnCreateProduct.Location = new System.Drawing.Point(719, 64);
+            this.btnCreateProduct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCreateProduct.Name = "btnCreateProduct";
-            this.btnCreateProduct.Size = new System.Drawing.Size(75, 47);
+            this.btnCreateProduct.Size = new System.Drawing.Size(86, 63);
             this.btnCreateProduct.TabIndex = 4;
             this.btnCreateProduct.Text = "Create Product";
             this.btnCreateProduct.UseVisualStyleBackColor = true;
@@ -88,19 +92,22 @@
             // 
             // btnSearchProduct
             // 
-            this.btnSearchProduct.Location = new System.Drawing.Point(454, 17);
+            this.btnSearchProduct.Location = new System.Drawing.Point(606, 19);
+            this.btnSearchProduct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearchProduct.Name = "btnSearchProduct";
-            this.btnSearchProduct.Size = new System.Drawing.Size(93, 23);
+            this.btnSearchProduct.Size = new System.Drawing.Size(106, 31);
             this.btnSearchProduct.TabIndex = 3;
             this.btnSearchProduct.Text = "Search";
             this.btnSearchProduct.UseVisualStyleBackColor = true;
+            this.btnSearchProduct.Click += new System.EventHandler(this.btnSearchProduct_Click);
             // 
             // txtSearchBox
             // 
-            this.txtSearchBox.Location = new System.Drawing.Point(235, 17);
+            this.txtSearchBox.Location = new System.Drawing.Point(356, 19);
+            this.txtSearchBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearchBox.Name = "txtSearchBox";
             this.txtSearchBox.PlaceholderText = "Searching ...";
-            this.txtSearchBox.Size = new System.Drawing.Size(204, 23);
+            this.txtSearchBox.Size = new System.Drawing.Size(233, 27);
             this.txtSearchBox.TabIndex = 2;
             // 
             // cbSearchSelect
@@ -112,35 +119,40 @@
             "Search By Product Name",
             "Search By Unit In Stock",
             "Search By Unit Price"});
-            this.cbSearchSelect.Location = new System.Drawing.Point(53, 17);
+            this.cbSearchSelect.Location = new System.Drawing.Point(148, 19);
+            this.cbSearchSelect.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbSearchSelect.Name = "cbSearchSelect";
-            this.cbSearchSelect.Size = new System.Drawing.Size(167, 23);
+            this.cbSearchSelect.Size = new System.Drawing.Size(190, 28);
             this.cbSearchSelect.Sorted = true;
             this.cbSearchSelect.TabIndex = 1;
             this.cbSearchSelect.Text = "Select Option Search";
             // 
-            // dataGridView1
+            // dgvProduct
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 48);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(545, 313);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProduct.Location = new System.Drawing.Point(3, 64);
+            this.dgvProduct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvProduct.Name = "dgvProduct";
+            this.dgvProduct.RowHeadersWidth = 51;
+            this.dgvProduct.RowTemplate.Height = 25;
+            this.dgvProduct.Size = new System.Drawing.Size(710, 417);
+            this.dgvProduct.TabIndex = 0;
+            this.dgvProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellContentClick);
             // 
             // frmProducts
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 388);
+            this.ClientSize = new System.Drawing.Size(818, 517);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Manager Products";
             this.Load += new System.EventHandler(this.frmProducts_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -148,7 +160,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvProduct;
         private System.Windows.Forms.Button btnEditProduct;
         private System.Windows.Forms.Button btnRemoveProduct;
         private System.Windows.Forms.Button btnCreateProduct;
