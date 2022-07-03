@@ -42,8 +42,15 @@ namespace SalesWinApp
                     {
                         MemberObject removeMember = dgvManagerMembers.CurrentRow.DataBoundItem as MemberObject;
                         var result = db.Members.Where(m => m.MemberId == removeMember.MemberId).FirstOrDefault();
+                    try
+                    {
                         db.Members.Remove(result);
                         db.SaveChanges();
+                    }catch(Exception ex)
+                    {
+                        MessageBox.Show("Error When Delete: \n" + ex);
+                    }
+                        
                     }
                 }
             
