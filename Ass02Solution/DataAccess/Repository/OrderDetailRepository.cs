@@ -28,9 +28,6 @@ namespace DataAccess.Repository
                     }
                     return instance;
                 }
-                
-                
-            
             } 
         }
 
@@ -56,6 +53,11 @@ namespace DataAccess.Repository
             List<OrderDetailObjec> listResult = new List<OrderDetailObjec>();
             listResult = GetOrderDetails().Where(o => o.OrderId == orderId).ToList();
             return listResult;
+        }
+
+        public void saveOrderDetail(List<OrderDetailObjec> list)
+        {
+
         }
        
 

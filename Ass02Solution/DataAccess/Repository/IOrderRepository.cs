@@ -11,5 +11,6 @@ namespace DataAccess.Repository
     {
         public List<OrderObject> GetOrderObjects();
         public List<OrderObject> GetListOrderByRangeDate(DateTime fromDate, DateTime toDate, MemberObject user);
+        public List<OrderObject> sortDecByTotal(List<OrderObject> listOrder);
     }
 }
