@@ -1,19 +1,58 @@
+
+﻿using DataAccess.Models;
+using Microsoft.Extensions.Configuration;
+
 ﻿using AutoMapper;
 using BusinessObject;
 using DataAccess.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BusinessObject;
+using AutoMapper;
 
 namespace DataAccess.Repository
 {
     public class ProductRepository : IProductRepository
     {
-        FStore2Context db = new FStore2Context();
+        private static readonly object instanceLock = new object();
+        public static ProductRepository instance = null;
+        private ProductRepository() { }
+        public static ProductRepository Instance
+        {
+            get
+            {
+                lock (instanceLock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new ProductRepository();
+                    }
+                }
+                return instance;
+            }
+        }
+        public List<ProductObject> GetAllProduct()
+        {
+            FStore2Context db = new FStore2Context();
+            List<ProductObject> listResult = new List<ProductObject>();
+            List<Product> products = db.Products.ToList();
+            var config = new MapperConfiguration(cfg =>
+               cfg.CreateMap<Product, ProductObject>()
+            );
+            var mapper = new Mapper(config);
+            foreach (Product pro in products)
+            {
+                ProductObject product = mapper.Map<ProductObject>(pro);
+                listResult.Add(product);
+            }
+            return listResult;
+
+        
         public List<ProductObject> getProductObjectsByOrderId(int OrderId)
         {
+          FStore2Context db = new FStore2Context();
            List<ProductObject> productObjects = new List<ProductObject>();
 
             var config = new MapperConfiguration(cfg =>
@@ -36,6 +75,7 @@ namespace DataAccess.Repository
 
         public List<ProductObject> GetProductObjects()
         {
+            FStore2Context db = new FStore2Context();
             List<ProductObject> reusltList = new List<ProductObject>();
 
             var config = new MapperConfiguration(cfg =>
@@ -49,6 +89,7 @@ namespace DataAccess.Repository
                 reusltList.Add(product);
             }
             return reusltList;
+
         }
     }
 }
