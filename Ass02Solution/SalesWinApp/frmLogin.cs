@@ -9,6 +9,7 @@ namespace SalesWinApp
 {
     public partial class frmLogin : Form
     {
+
         public static MemberObject User { get; set; }
         public frmLogin()
         {

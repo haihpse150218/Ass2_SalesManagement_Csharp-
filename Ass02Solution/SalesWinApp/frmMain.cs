@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,11 @@ namespace SalesWinApp
 {
     public partial class frmMain : Form
     {
+        
         public frmMain()
         {
             InitializeComponent();
         }
-
         private void memberManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach(Form form in this.MdiChildren)
